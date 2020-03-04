@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+            Results
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+        <style>
+            body{background-color: wheat;}
+        </style>
+    </head>
+    <body>
+        <h1>Search Results</h1>
+        {% if true %}
+            <h2>Match found</h2>
+            <p><a href="homepage.html">Result1</a></p>
+            <p><a href="Result2">Result2</a></p>
+        {% else %}
+            <h2>Match not found, but did you mean this?</h2>
+            <a href="match1">Match1</a>
+        {% endif %}
