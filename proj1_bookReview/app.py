@@ -1,15 +1,14 @@
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
-# app.run(debug=True)
 
 @app.route("/")
 def index():
-    return render_template("homepage1.html")
+    return render_template("index.html")
 
-@app.route("/homepage")
+@app.route("/index")
 def homepage():
-    return render_template("homepage1.html")
+    return render_template("index.html")
 
 @app.route("/register", methods=["POST","GET"])
 def register():
