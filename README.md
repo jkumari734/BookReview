@@ -8,4 +8,4 @@
 # Loading the Website
 To go to the homepage of the website:
 1. https://jkumari734.github.io/BookReview/ go to this url.
-2. To register, 
+ 
