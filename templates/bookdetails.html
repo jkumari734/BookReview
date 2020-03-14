@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Web Page!</title>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: dodgerblue;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: dodgerblue;
+                /* flex-direction: column; */
+                /* flex-grow: 0; */
+                justify-content: center;
+            }
+            .container > div {
+                background-color: #f1f1f1;
+                font-size: 20px;
+                margin: 20px;
+                /* text-align:center */
+                padding: 20px;
+                width: 200px;
+                /* flex-direction: row; */
+            }
+            .home {
+                color: gold;
+                background-color: grey;
+                font-size: larger;
+            }
+        </style>
+    </head>
+    <body>
+        <a class="home" href="{{ url_for('index')}}">Go to Homepage</a>
+        <div class="container">
+            {% for i,j,k,m,n,o,isbn in title %}
+            <div>
+                <a style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" href="{{ url_for('reviewSubmit', i=isbn) }}">Title - {{ i }}</a>
+                <p>Goodreads Rating Count - {{ j }}</p> 
+                <p>Goodreads Average Rating - {{ k }}</p>
+                <p style="font-size: larger ; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: red;"  >BookLover Reviews</p> 
+                <p style="color: orange;">{{ m }}, Rating - {{ n }}</p>    
+                <p>Review</p>
+                <p>{{ o }}</p>
+            </div>
+            {% endfor %} 
+        </div>
+        <a class="home" href="{{ url_for('index')}}">Go to Homepage</a>
+    </body>
+</html>

@@ -103,11 +103,12 @@
         </style>
     <body>
         <h1>BookLover</h1>
-        <a type="button" class="button" style="background-color: palevioletred" href="{{ url_for('registration') }}">Register</a>
-        <a type="button" class="button1" style="background-color: palevioletred" href="{{ url_for('loginPage') }}">Login</a>
+        <h3>Hello {{ name }}</h3>
+        <a type="button" class="button" style="background-color: palevioletred" href="{{ url_for('index') }}">Logout</a>
+        <!-- <a type="button" class="button1" style="background-color: palevioletred" href="{{ url_for('loginPage') }}">Login</a> -->
         
         <div class="topnav">
-            <a class="active" href="">Home</a>
+            <a class="active" href="homapage1.html">Home</a>
             <a class="active" href="login.html">About</a>
             <!-- <a class="active" href="" -->
             <div class="search-container">
@@ -127,7 +128,7 @@
 
         <div class="search-container">
             <form>
-                <input type="text" placeholder="Search books" name="bookname">
+                <input type="text" placeholder="Search books" name="search">
                 <button type="submit">Submit</button>
             </form>
         </div>

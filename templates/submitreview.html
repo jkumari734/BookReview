@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+        <style>
+            body{
+                background-color: palegreen;
+            }
+            .styling{
+                text-align: left;
+                padding-left: 12px;
+                padding-top: 12px;
+                padding-bottom: 20px;
+                font-size: large;
+                background-color: lightgray;
+                color: black;
+                font-weight: bold;
+                font-style: italic;
+            }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: palegreen;
+                /* flex-direction: column; */
+                /* flex-grow: 0; */
+                justify-content: left;
+                /* position: absolute; */
+            }
+            .container > div {
+                background-color: #f1f1f1;
+                font-size: 20px;
+                margin: 20px;
+                /* text-align:center */
+                padding: 20px;
+                width: 400px;
+                
+                /* flex-direction: row; */
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            {% for isbn, title, author, year in x %}
+            <div class="styling">
+                <div>
+                    <p>ISBN - {{ isbn }}</p>
+                    <p>Title - {{ title }}</p>
+                    <p>Author - {{ author }}</p>
+                    <p>Publication year - {{ year }}</p>
+                </div>
+                
+            </div>
+            
+            {% endfor %}
+        </div>
+        <div>
+            <h5>Leave your review!</h5>
+            <form action="{{ url_for('submit', i=i)}}", method="POST", method="GET">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <select type="number" class="form-control" name="rating" placeholder="Rating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="review">Review</label>
+                <input type="text" class="form-control" name="textreview" placeholder="Review">
+            </div>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div>
+            {% for user, rating, textrev in reviews %}
+            <p>{{ user }}, {{ rating }}, {{ textrev }}</p>
+            {% endfor %}
+        </div>
+        
+    </body>
+</html>
+
+
