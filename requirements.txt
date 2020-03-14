@@ -1,1 +1,5 @@
 sqlalchemy
+flask
+werkzeug
+jinja2
+click
